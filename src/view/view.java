@@ -23,8 +23,8 @@ public class view extends JFrame{
     Font myFont =new Font("Time New Roman", Font.CENTER_BASELINE, 30);
     
     public view()  {
-        
-        frame =new JFrame("Mini Calculator");
+        model = new model();
+        frame = new JFrame("Mini Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setFont(myFont);
@@ -66,7 +66,7 @@ public class view extends JFrame{
         panel.setBounds(90, 250, 300, 150);
         panel.setLayout(new GridLayout(2, 3, 15, 15));
         
-        controller listener =new controller(null);
+        controller listener = new controller(this);
         
         functionButton[0] = sumBut;
         functionButton[1] = muniBut;
@@ -97,8 +97,8 @@ public class view extends JFrame{
         frame.setVisible(true);
     }
     public void sum() {
-        double firstValue =Double.valueOf(textfield1.getText());
-        double secondValue =Double.valueOf(textfield2.getText());
+        double firstValue = Double.valueOf(textfield1.getText());
+        double secondValue = Double.valueOf(textfield2.getText());
         this.model.setFirstValue(firstValue);
         this.model.setSecondValue(secondValue);
         this.model.sum();
