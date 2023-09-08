@@ -9,7 +9,6 @@ import view.view;
 public class controller implements ActionListener{
 
     private view view;
-    private model model;
 
     public controller(view view) {
         this.view = view;
@@ -19,22 +18,22 @@ public class controller implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         String button = e.getActionCommand();
         if(button.equals("+")) {
-            this.model.sum();
+            this.view.sum();
         }
         else if(button.equals("-")) {
-            this.model.muni();
+            this.view.muni();
         }
         else if(button.equals("*")) {
-            this.model.mul();
+            this.view.mul();
         }
         else if(button.equals("/")) {
-            this.model.div();
+            this.view.div();
         }
         else if(button.equals("^")) {
-            this.model.pow();
+            this.view.pow();
         }
         else if(button.equals("%")) {
-            this.model.mod();
+            this.view.mod();
         }
     }
     
